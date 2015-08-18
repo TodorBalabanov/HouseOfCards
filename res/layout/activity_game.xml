@@ -1,0 +1,162 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkgreen"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/points_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:text="0 pts" />
+
+    <ImageView
+        android:id="@+id/deck_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/points_text"
+        android:src="@drawable/deck" />
+
+    <TextView
+        android:id="@+id/cards_left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/deck_view"
+        android:text="55 left" />
+
+    <ImageView
+        android:id="@+id/current_card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cards_left_text"
+        android:src="@drawable/s3" />
+
+    <TextView
+        android:id="@+id/card_value_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/current_card_view"
+        android:text="0 pts" />
+
+    <ImageButton
+        android:id="@+id/spades_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/current_card_view"
+        android:src="@drawable/spades_small" />
+
+    <TextView
+        android:id="@+id/spades_points_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/spades_button"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="20dp"
+        android:text="0 pts" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/spades_button"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="(+10)" />
+
+    <ImageButton
+        android:id="@+id/clubs_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:layout_toRightOf="@+id/spades_button"
+        android:src="@drawable/clubs_small" />
+
+    <TextView
+        android:id="@+id/clubs_points_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/clubs_button"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="20dp"
+        android:text="0 pts" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/clubs_button"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="(+20)" />
+
+    <ImageButton
+        android:id="@+id/diamonds_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:layout_toRightOf="@+id/clubs_button"
+        android:src="@drawable/diamonds_small" />
+
+    <TextView
+        android:id="@+id/diamonds_points_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/diamonds_button"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="20dp"
+        android:text="0 pts" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/diamonds_button"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="(+30)" />
+
+    <ImageButton
+        android:id="@+id/hearts_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:layout_toRightOf="@+id/diamonds_button"
+        android:src="@drawable/hearts_small" />
+
+    <TextView
+        android:id="@+id/hearts_points_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/hearts_button"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="20dp"
+        android:text="0 pts" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/hearts_button"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="(+40)" />
+    
+</RelativeLayout>

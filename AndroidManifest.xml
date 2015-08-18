@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="eu.veldsoft.house.of.cards"
     android:versionCode="1"
@@ -7,11 +8,48 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="15" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/title_activity_splash"
+            android:noHistory="true" >
+            <meta-data
+                android:name="timeout"
+                android:value="5000" />
+            <meta-data
+                android:name="redirect"
+                android:value="eu.veldsoft.house.of.cards.LobbyActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LobbyActivity"
+            android:label="@string/title_activity_lobby"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help" >
+        </activity>
+        <activity
+            android:name=".HighscoresActivity"
+            android:label="@string/title_activity_highscores" >
+        </activity>
+        <activity
+            android:name=".GameActivity"
+            android:label="@string/title_activity_game"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>

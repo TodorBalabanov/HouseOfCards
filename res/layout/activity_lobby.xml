@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkgreen"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <ImageButton
+        android:id="@+id/new_game_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/newgame" />
+
+    <ImageButton
+        android:id="@+id/six_cards_button"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/jokers_button"
+        android:src="@drawable/sixcards_true" />
+
+    <ImageButton
+        android:id="@+id/jokers_button"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/new_game_button"
+        android:src="@drawable/jokers_true" />
+
+    <ImageButton
+        android:id="@+id/highscores_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/six_cards_button"
+        android:src="@drawable/highscores" />
+
+    <ImageButton
+        android:id="@+id/help_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/highscores_button"
+        android:src="@drawable/help" />
+    
+</RelativeLayout>
