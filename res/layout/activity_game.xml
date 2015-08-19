@@ -23,7 +23,87 @@
         android:layout_below="@+id/points_text"
         android:src="@drawable/deck" />
 
-    <TextView
+<ImageView android:id="@+id/house00" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="0dp"  android:layout_marginLeft="5dp"/>
+<ImageView android:id="@+id/house01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="20dp"  android:layout_marginLeft="5dp"/>
+<ImageView android:id="@+id/house02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="40dp"  android:layout_marginLeft="5dp"/>
+<ImageView android:id="@+id/house03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="60dp"  android:layout_marginLeft="5dp"/>
+<ImageView android:id="@+id/house04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="80dp"  android:layout_marginLeft="5dp"/>
+<ImageView android:id="@+id/house05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="100dp"  android:layout_marginLeft="5dp"/>
+<ImageView android:id="@+id/house06" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="120dp"  android:layout_marginLeft="5dp"/>
+<ImageView android:id="@+id/house07" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="140dp"  android:layout_marginLeft="5dp"/>
+    
+<ImageView android:id="@+id/house10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="0dp"  android:layout_marginLeft="105dp"/>
+<ImageView android:id="@+id/house11" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="20dp"  android:layout_marginLeft="105dp"/>
+<ImageView android:id="@+id/house12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="40dp"  android:layout_marginLeft="105dp"/>
+<ImageView android:id="@+id/house13" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="60dp"  android:layout_marginLeft="105dp"/>
+<ImageView android:id="@+id/house14" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="80dp"  android:layout_marginLeft="105dp"/>
+<ImageView android:id="@+id/house15" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="100dp"  android:layout_marginLeft="105dp"/>
+<ImageView android:id="@+id/house16" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="120dp"  android:layout_marginLeft="105dp"/>
+<ImageView android:id="@+id/house17" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="140dp"  android:layout_marginLeft="105dp"/>
+    
+<ImageView android:id="@+id/house20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="0dp"  android:layout_marginLeft="205dp"/>
+<ImageView android:id="@+id/house21" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="20dp"  android:layout_marginLeft="205dp"/>
+<ImageView android:id="@+id/house22" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="40dp"  android:layout_marginLeft="205dp"/>
+<ImageView android:id="@+id/house23" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="60dp"  android:layout_marginLeft="205dp"/>
+<ImageView android:id="@+id/house24" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="80dp"  android:layout_marginLeft="205dp"/>
+<ImageView android:id="@+id/house25" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="100dp"  android:layout_marginLeft="205dp"/>
+<ImageView android:id="@+id/house26" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="120dp"  android:layout_marginLeft="205dp"/>
+<ImageView android:id="@+id/house27" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="140dp"  android:layout_marginLeft="205dp"/>
+    
+<ImageView android:id="@+id/house30" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="0dp" android:layout_marginLeft="305dp"/>
+<ImageView android:id="@+id/house31" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="20dp" android:layout_marginLeft="305dp"/>
+<ImageView android:id="@+id/house32" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="40dp" android:layout_marginLeft="305dp"/>
+<ImageView android:id="@+id/house33" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="60dp" android:layout_marginLeft="305dp"/>
+<ImageView android:id="@+id/house34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="80dp" android:layout_marginLeft="305dp"/>
+<ImageView android:id="@+id/house35" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="100dp" android:layout_marginLeft="305dp"/>
+<ImageView android:id="@+id/house36" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="120dp" android:layout_marginLeft="305dp"/>
+<ImageView android:id="@+id/house37" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/deck_view" android:layout_alignParentTop="true" android:layout_marginTop="140dp" android:layout_marginLeft="305dp"/>
+
+<ImageView
+    android:id="@+id/stop0"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="0dp"
+    android:layout_toRightOf="@+id/deck_view"
+    android:src="@drawable/closed"
+    android:visibility="invisible" />
+
+<ImageView
+    android:id="@+id/stop1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="105dp"
+    android:layout_marginTop="0dp"
+    android:layout_toRightOf="@+id/deck_view"
+    android:src="@drawable/closed"
+    android:visibility="invisible" />
+
+<ImageView
+    android:id="@+id/stop2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="205dp"
+    android:layout_marginTop="0dp"
+    android:layout_toRightOf="@+id/deck_view"
+    android:src="@drawable/closed"
+    android:visibility="invisible" />
+
+<ImageView
+    android:id="@+id/stop3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="305dp"
+    android:layout_marginTop="0dp"
+    android:layout_toRightOf="@+id/deck_view"
+    android:src="@drawable/closed"
+    android:visibility="invisible" />
+
+	<TextView
         android:id="@+id/cards_left_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/cards_left_text"
-        android:src="@drawable/s3" />
+        android:src="@drawable/empty" />
 
     <TextView
         android:id="@+id/card_value_text"
@@ -61,18 +141,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/spades_button"
-        android:layout_marginLeft="0dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/spades_button"
         android:text="0 pts" />
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/spades_button"
-        android:layout_marginLeft="0dp"
         android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/spades_button"
         android:text="(+10)" />
 
     <ImageButton
@@ -80,7 +160,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="45dp"
         android:layout_toRightOf="@+id/spades_button"
         android:src="@drawable/clubs_small" />
 
@@ -89,18 +169,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/clubs_button"
-        android:layout_marginLeft="0dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/clubs_button"
         android:text="0 pts" />
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/clubs_button"
-        android:layout_marginLeft="0dp"
         android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/clubs_button"
         android:text="(+20)" />
 
     <ImageButton
@@ -108,7 +188,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="45dp"
         android:layout_toRightOf="@+id/clubs_button"
         android:src="@drawable/diamonds_small" />
 
@@ -117,18 +197,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/diamonds_button"
-        android:layout_marginLeft="0dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/diamonds_button"
         android:text="0 pts" />
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/diamonds_button"
-        android:layout_marginLeft="0dp"
         android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/diamonds_button"
         android:text="(+30)" />
 
     <ImageButton
@@ -136,7 +216,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="45dp"
         android:layout_toRightOf="@+id/diamonds_button"
         android:src="@drawable/hearts_small" />
 
@@ -145,18 +225,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/hearts_button"
-        android:layout_marginLeft="0dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/hearts_button"
         android:text="0 pts" />
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/hearts_button"
-        android:layout_marginLeft="0dp"
         android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/hearts_button"
         android:text="(+40)" />
-    
+
 </RelativeLayout>
