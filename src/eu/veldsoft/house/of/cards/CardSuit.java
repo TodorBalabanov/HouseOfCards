@@ -11,17 +11,17 @@ enum CardSuit {
 	 * The Spades Suite
 	 */
 	SPADES("Spades", "s"),
-	
+
 	/**
 	 * The Clubs Suite
 	 */
 	CLUBS("Clubs", "c"),
-	
+
 	/**
 	 * The Diamonds Suite
 	 */
 	DIAMONDS("Diamonds", "d"),
-	
+
 	/**
 	 * The Hearts Suite
 	 */

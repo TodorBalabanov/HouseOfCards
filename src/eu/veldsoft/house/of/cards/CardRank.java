@@ -68,7 +68,7 @@ enum CardRank {
 	 * The name of the Rank.
 	 */
 	private String name;
-	
+
 	/**
 	 * The short name of the Rank. Typically used for printing.
 	 */

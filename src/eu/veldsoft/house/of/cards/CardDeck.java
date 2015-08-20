@@ -33,14 +33,14 @@ final class CardDeck {
 			for (CardSuit suite : CardSuit.values()) {
 				for (CardRank rank : CardRank.values()) {
 					if (rank != CardRank.JOKER)
-						cards.add(new Card(suite, rank));
+						cards.add(Card.instanceOf(suite, rank));
 				}
 			}
 		}
 
 		for (int i = 0; i < jokerSets; i++) {
 			for (CardSuit suit : CardSuit.values()) {
-				cards.add(new Card(suit, CardRank.JOKER));
+				cards.add(Card.instanceOf(suit, CardRank.JOKER));
 			}
 		}
 	}

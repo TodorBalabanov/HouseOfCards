@@ -14,16 +14,16 @@ final class House {
 	/**
 	 * The states the House can have
 	 */
-	enum HouseState {
+	enum State {
 		/**
 		 * Indicates when the house is closed.
 		 */
-		STATE_CLOSED,
+		CLOSED,
 
 		/**
 		 * Indicates when the house is opened.
 		 */
-		STATE_OPENED
+		OPENED,
 	}
 
 	/**
@@ -34,7 +34,7 @@ final class House {
 	/**
 	 * Indicates the current state of the house.
 	 */
-	private HouseState state;
+	private State state;
 
 	/**
 	 * A CardPointSystem implementation for calculating the card points.
@@ -69,7 +69,7 @@ final class House {
 	 */
 	public House(CardSuit suit) {
 		this.cards = new ArrayList<Card>();
-		this.state = HouseState.STATE_OPENED;
+		this.state = State.OPENED;
 		this.pointSystem = new HoCPointSystem();
 		this.suit = suit;
 	}
@@ -107,6 +107,14 @@ final class House {
 	}
 
 	/**
+	 * 
+	 * @return
+	 */
+	public State getState() {
+		return state;
+	}
+
+	/**
 	 * Returns the total points of the cards in the house depending on the
 	 * CardPointSystem implementation
 	 * 
@@ -130,7 +138,7 @@ final class House {
 	 *         <code>false</code>
 	 */
 	public boolean isOpened() {
-		return (this.state == HouseState.STATE_OPENED);
+		return (this.state == State.OPENED);
 	}
 
 	/**
@@ -234,6 +242,6 @@ final class House {
 	 * Closes this House
 	 */
 	public void closeHouse() {
-		this.state = HouseState.STATE_CLOSED;
+		this.state = State.CLOSED;
 	}
 }

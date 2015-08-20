@@ -87,8 +87,8 @@ public class LobbyActivity extends Activity {
 				.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						 LobbyActivity.this.startActivity(new Intent(
-						 LobbyActivity.this, GameActivity.class));
+						LobbyActivity.this.startActivity(new Intent(
+								LobbyActivity.this, GameActivity.class));
 					}
 				});
 	}

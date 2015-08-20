@@ -51,7 +51,7 @@ final class JHouse extends JPanel implements HouseListener, MouseListener {
 	/**
 	 * The top distance between two cards
 	 */
-	private static final int CARD_DISTANSE = 30;
+	private static final int CARD_DISTANCE = 30;
 
 	/**
 	 * The default background color.
@@ -106,23 +106,19 @@ final class JHouse extends JPanel implements HouseListener, MouseListener {
 		infoPanel.setOpaque(false);
 		switch (house.getSuit()) {
 		case SPADES:
-			infoPanel.add(
-					new JLabel(Utility.getImage("spades_small.png")),
+			infoPanel.add(new JLabel(Utility.getImage("spades_small.png")),
 					BorderLayout.WEST);
 			break;
 		case CLUBS:
-			infoPanel.add(
-					new JLabel(Utility.getImage("clubs_small.png")),
+			infoPanel.add(new JLabel(Utility.getImage("clubs_small.png")),
 					BorderLayout.WEST);
 			break;
 		case HEARTS:
-			infoPanel.add(
-					new JLabel(Utility.getImage("hearts_small.png")),
+			infoPanel.add(new JLabel(Utility.getImage("hearts_small.png")),
 					BorderLayout.WEST);
 			break;
 		case DIAMONDS:
-			infoPanel.add(
-					new JLabel(Utility.getImage("diamonds_small.png")),
+			infoPanel.add(new JLabel(Utility.getImage("diamonds_small.png")),
 					BorderLayout.WEST);
 			break;
 		}
@@ -157,7 +153,7 @@ final class JHouse extends JPanel implements HouseListener, MouseListener {
 		for (int i = size - 1; i >= 0; i--) {
 			ImageIcon cardImg = Utility.getCardImage(cards.get(i));
 			JLabel cardLabel = new JLabel(cardImg);
-			cardLabel.setBounds(4, ((y * CARD_DISTANSE) - (CARD_DISTANSE - 4)),
+			cardLabel.setBounds(4, ((y * CARD_DISTANCE) - (CARD_DISTANCE - 4)),
 					cardImg.getIconWidth(), cardImg.getIconHeight());
 
 			this.cardsPanel.add(cardLabel);

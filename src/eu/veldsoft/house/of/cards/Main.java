@@ -56,21 +56,6 @@ public final class Main extends JFrame implements EngineListener {
 	private Engine engine;
 
 	/**
-	 * The default point system for various calculations
-	 */
-	private CardPointSystem pointSystem = new HoCPointSystem();
-
-	/**
-	 * The Rule for the Joker cards.
-	 */
-	private boolean jokerRule = true;
-
-	/**
-	 * The Rule for the Six Cards.
-	 */
-	private boolean sixCardsRule = true;
-
-	/**
 	 * Temporary value for the High Score Player Name.
 	 */
 	private boolean playerNameSet = true;
@@ -199,7 +184,7 @@ public final class Main extends JFrame implements EngineListener {
 			this.handLabel = new JLabel(Utility.getImage("deck.png"));
 			this.handLabel.setText("");
 		} else {
-			this.handLabel.setText(this.pointSystem.getPoints(this.engine
+			this.handLabel.setText(engine.getPointSystem().getPoints(this.engine
 					.getPlayersHandCard()) + " pts");
 			this.handLabel.setIcon(Utility.getCardImage(this.engine
 					.getPlayersHandCard()));
@@ -279,8 +264,7 @@ public final class Main extends JFrame implements EngineListener {
 		/*
 		 * Restart Game
 		 */
-		JLabel restartGameLabel = new JLabel(
-				Utility.getImage("restart.png"));
+		JLabel restartGameLabel = new JLabel(Utility.getImage("restart.png"));
 		restartGameLabel.setPreferredSize(new Dimension(120, 71));
 		restartGameLabel.setBackground(Color.RED);
 		sidebar.add(restartGameLabel);
@@ -332,7 +316,7 @@ public final class Main extends JFrame implements EngineListener {
 				if (val == JOptionPane.YES_OPTION) {
 					try {
 						engine.quitGame();
-						engine.startNewGame(1, 1, jokerRule, sixCardsRule);
+						engine.startNewGame(1, 1);
 					} catch (HoCException e) {
 						System.err.println("WTF??? I cannot quit the game :S");
 					}
@@ -405,15 +389,14 @@ public final class Main extends JFrame implements EngineListener {
 				Graphics2D g2 = (Graphics2D) g;
 				g2.setColor(new Color(57, 137, 47));
 				g2.fillRect(0, 0, getWidth(), getHeight());
-				g2.drawImage(Utility.getImage("logo2.png").getImage(), 0,
-						0, 165, 400, null);
+				g2.drawImage(Utility.getImage("logo2.png").getImage(), 0, 0,
+						165, 400, null);
 				super.paint(g);
 			}
 		};
 		this.introScreen.setOpaque(false);
 
-		final JLabel newGameButton = new JLabel(
-				Utility.getImage("newgame.png"));
+		final JLabel newGameButton = new JLabel(Utility.getImage("newgame.png"));
 		final JLabel jokersButton = new JLabel(
 				Utility.getImage("jokers_true.png"));
 		final JLabel sixCardsButton = new JLabel(
@@ -426,13 +409,12 @@ public final class Main extends JFrame implements EngineListener {
 		newGameButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				engine.startNewGame(1, 1, jokerRule, sixCardsRule);
+				engine.startNewGame(1, 1);
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				newGameButton.setIcon(Utility
-						.getImage("newgame_over.png"));
+				newGameButton.setIcon(Utility.getImage("newgame_over.png"));
 			}
 
 			@Override
@@ -443,41 +425,41 @@ public final class Main extends JFrame implements EngineListener {
 		jokersButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				jokerRule = !jokerRule;
+				engine.changeJokerRule();
 				jokersButton.setIcon(Utility.getImage("jokers_over_"
-						+ jokerRule + ".png"));
+						+ engine.isJokerRule() + ".png"));
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				jokersButton.setIcon(Utility.getImage("jokers_over_"
-						+ jokerRule + ".png"));
+						+ engine.isJokerRule() + ".png"));
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				jokersButton.setIcon(Utility.getImage("jokers_"
-						+ jokerRule + ".png"));
+				jokersButton.setIcon(Utility.getImage("jokers_" + engine.isJokerRule()
+						+ ".png"));
 			}
 		});
 		sixCardsButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				sixCardsRule = !sixCardsRule;
+				engine.changeSixCardsRule();
 				sixCardsButton.setIcon(Utility.getImage("sixcards_over_"
-						+ sixCardsRule + ".png"));
+						+ engine.isSixCardsRule() + ".png"));
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				sixCardsButton.setIcon(Utility.getImage("sixcards_over_"
-						+ sixCardsRule + ".png"));
+						+ engine.isSixCardsRule() + ".png"));
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				sixCardsButton.setIcon(Utility.getImage("sixcards_"
-						+ sixCardsRule + ".png"));
+						+ engine.isSixCardsRule() + ".png"));
 			}
 		});
 		highScoresButton.addMouseListener(new MouseAdapter() {
@@ -494,8 +476,7 @@ public final class Main extends JFrame implements EngineListener {
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				highScoresButton.setIcon(Utility
-						.getImage("highscores.png"));
+				highScoresButton.setIcon(Utility.getImage("highscores.png"));
 			}
 		});
 		helpButton.addMouseListener(new MouseAdapter() {
@@ -591,7 +572,7 @@ public final class Main extends JFrame implements EngineListener {
 		againLabel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent mev) {
-				engine.startNewGame(1, 1, jokerRule, sixCardsRule);
+				engine.startNewGame(1, 1);
 				mev.consume();
 			}
 

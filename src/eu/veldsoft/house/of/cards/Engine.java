@@ -11,31 +11,64 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 final class Engine implements HouseListener {
 
-	/** Registered listeners to this engine */
+	/**
+	 * The Rule for the Joker cards.
+	 */
+	private boolean jokerRule = true;
+
+	/**
+	 * The Rule for the Six Cards.
+	 */
+	private boolean sixCardsRule = true;
+
+	/**
+	 * The default point system for various calculations
+	 */
+	private CardPointSystem pointSystem = new HoCPointSystem();
+
+	/**
+	 * Registered listeners to this engine
+	 */
 	private List<EngineListener> listeners = new CopyOnWriteArrayList<EngineListener>();
 
-	/** The card the player is holding in his hand. */
+	/**
+	 * The card the player is holding in his hand.
+	 */
 	private Card playersHandCard;
 
-	/** The player's score */
+	/**
+	 * The player's score
+	 */
 	private int playerScore;
 
-	/** The list of houses. */
+	/**
+	 * The list of houses.
+	 */
 	private House[] houses;
 
-	/** Dealer is actually a CardDeck. */
+	/**
+	 * Dealer is actually a CardDeck.
+	 */
 	private CardDeck dealer;
 
-	/** The Hall of Fame. */
+	/**
+	 * The Hall of Fame.
+	 */
 	private HallOfFame hallOfFame;
 
-	/** Holds if the game is over or not. */
+	/**
+	 * Holds if the game is over or not.
+	 */
 	private boolean gameOver;
 
-	/** The message when the game is over. */
+	/**
+	 * The message when the game is over.
+	 */
 	private String gameOverMessage;
 
-	/** Indicates that a game has started */
+	/**
+	 * Indicates that a game has started
+	 */
 	private boolean started = false;
 
 	/**
@@ -81,8 +114,7 @@ final class Engine implements HouseListener {
 	 *            <code>true</code> for the NumCard Rule to be added, otherwise
 	 *            <code>false</code>
 	 */
-	public void startNewGame(int numHouseSets, int numDecks,
-			boolean withJokerRule, boolean withNumCardRule) {
+	public void startNewGame(int numHouseSets, int numDecks) {
 		this.playersHandCard = null;
 		this.playerScore = 0;
 		this.started = true;
@@ -93,14 +125,13 @@ final class Engine implements HouseListener {
 		int j = 0;
 		for (int i = 0; i < numHouseSets; i++) {
 			for (CardSuit suit : CardSuit.values()) {
-				this.houses[j] = createNewHouse(suit, withJokerRule,
-						withNumCardRule);
+				this.houses[j] = createNewHouse(suit, jokerRule, sixCardsRule);
 				j++;
 			}
 		}
 
 		int jokerSet = 0;
-		if (withJokerRule)
+		if (jokerRule)
 			jokerSet = 1;
 		this.dealer = new CardDeck(numDecks, jokerSet);
 
@@ -153,12 +184,39 @@ final class Engine implements HouseListener {
 	}
 
 	/**
+	 * Moves a card from players hand to the given house.
+	 * 
+	 * @param house
+	 *            the house to add the card
+	 * @throws HoCException
+	 *             when there is no card in players hand <br/>
+	 *             when house is closed <br/>
+	 *             when game hasn't started
+	 * @throws ArrayIndexOutOfBoundsException
+	 */
+	public void addCardToHouse(int index) throws HoCException,
+			ArrayIndexOutOfBoundsException {
+		if (index < 0 || index >= houses.length) {
+			throw new ArrayIndexOutOfBoundsException();
+		}
+		addCardToHouse(houses[index]);
+	}
+
+	/**
 	 * Returns players hand card (cloned).
 	 * 
 	 * @return players hand card
 	 */
 	public Card getPlayersHandCard() {
 		return playersHandCard;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public CardPointSystem getPointSystem() {
+		return pointSystem;
 	}
 
 	/**
@@ -199,6 +257,52 @@ final class Engine implements HouseListener {
 	 */
 	public int getPlayerScore() {
 		return this.playerScore;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean isJokerRule() {
+		return jokerRule;
+	}
+
+	/**
+	 * 
+	 * @param jokerRule
+	 */
+	public void setJokerRule(boolean jokerRule) {
+		this.jokerRule = jokerRule;
+	}
+
+	/**
+	 * 
+	 */
+	public void changeJokerRule() {
+		jokerRule = !jokerRule;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean isSixCardsRule() {
+		return sixCardsRule;
+	}
+
+	/**
+	 * 
+	 * @param sixCardsRule
+	 */
+	public void setSixCardsRule(boolean sixCardsRule) {
+		this.sixCardsRule = sixCardsRule;
+	}
+
+	/**
+	 * 
+	 */
+	public void changeSixCardsRule() {
+		sixCardsRule = !sixCardsRule;
 	}
 
 	/**
@@ -244,7 +348,7 @@ final class Engine implements HouseListener {
 			return;
 		}
 
-		/* 
+		/*
 		 * Check whether all houses are closed
 		 */
 		boolean allClosed = true;
@@ -254,19 +358,19 @@ final class Engine implements HouseListener {
 		}
 
 		if (allClosed) {
-			/* 
+			/*
 			 * If all closed, then game over
 			 */
 			this.gameOver = true;
 			this.gameOverMessage = "All houses where closed.";
 		} else {
-			/* 
+			/*
 			 * If at least one opened, try to deal
 			 */
 			try {
 				deal();
 			} catch (HoCException e) {
-				/* 
+				/*
 				 * If there are no cards left, game over
 				 */
 				this.playersHandCard = null;
@@ -326,12 +430,12 @@ final class Engine implements HouseListener {
 		House house = new House(suit);
 		house.addHouseListener(this);
 
-		/* 
+		/*
 		 * Add all PermissionRules
 		 */
 		house.addPermissionRule((new ClosedHouseRule()));
 
-		/* 
+		/*
 		 * Add all ActionRules
 		 */
 		if (withJokerRule)

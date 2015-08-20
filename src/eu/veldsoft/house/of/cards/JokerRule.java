@@ -26,7 +26,7 @@ final class JokerRule implements ActionRule {
 	private int score = 0;
 
 	public boolean applies(House house) {
-		/* 
+		/*
 		 * Get last card
 		 */
 		Card card = house.getCards().get(house.getCards().size() - 1);
