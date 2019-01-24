@@ -11,3 +11,6 @@ If the number of cards in a House will be six (6) and the total is less than 31,
 
 ## Joker Rule
 This rule adds 4 Jokers to the deck (each with a different suit). If you add it to the House “coloured” with the same suit (e.g. the Heart special card to the Heart House) then it is like having 31 no matter what was the total there and the player gets 100 points, but if you add it to a House “coloured” with another suit (e.g. the Heart card to the Diamond House) you lose immediately.
+
+[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/eu.veldsoft.house.of.cards/) 
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=eu.veldsoft.house.of.cards) 
